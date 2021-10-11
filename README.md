@@ -1,4 +1,7 @@
-# COT5405-AOA-Graphs
+# COT5405-AOA-Graphs 
+``` Anmol Lingan Gouda Patil ```\
+``` UFID: 19673150 ```
+
 Graph Algorithms with proof for the following:
 
 > *Cycle Detection*:
