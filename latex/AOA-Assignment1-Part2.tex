@@ -125,12 +125,12 @@ A tree contains V-1 edges and a cycle should contain atleast V edges.
 \item The above algorithm visits every node once.
 \item To find the minimum spanning tree, the above algorithm visits atmost V nodes before discovering a back edge and finally discarding the maximum weight edge.
 \item However, since there are 9 more edges than required number of edges that can satisfy the condition of a tree(V-1 edges). This algorithm has to be run for a maximum of 9 times. Resulting in the following time complexity:
-$9 \times O(n)$
+$9 \times O(V)$
 
-\item Why order of O(n)? because the algorithm is similar to the first algorithm presented for detecting a cycle.
-Therefore a constant times O(n) 
-\item $c \times O(n) = O(n)$.
-\item If there is no cycle it traverses all nodes only once before terminating, also O(n).
+\item Why order of O(V)? because the algorithm is similar to the first algorithm presented for detecting a cycle.
+Therefore a constant times O(V) 
+\item $c \times O(V) = O(V)$.
+\item If there is no cycle it traverses all nodes only once before terminating, also O(V).
 \end{itemize}
 \end{solution}
 
