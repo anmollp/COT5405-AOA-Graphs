@@ -30,6 +30,7 @@ Prerequisites:
 > G<sub>i</sub>(V<sub>i</sub>, E<sub>i</sub>) for testcase i.
 * Every knot is printed and verfified to validate the presence of cycle.
 * Performance Plots are available as part of the [report](https://github.com/anmollp/COT5405-AOA-Graphs/blob/main/report/CycleFinding.pdf).
+* Latex source of report available [here](https://github.com/anmollp/COT5405-AOA-Graphs/blob/main/latex/AoA-Assignment1-Part1.tex).
 
 ## Minimum spanning tree
 
@@ -41,3 +42,4 @@ Prerequisites:
 > Gi(V<sub>i</sub>, E<sub>i</sub>) for testcase i.
 * The weight of minimum spanning tree generated for **G<sub>i</sub>** using **MinimumSpanningTreeDFS** Algorithm is validated against the weight of JGraphT's **KruskalMinimumSpanningTree** applied on **G<sub>i</sub>** using assert statement.
 * Performance Plots are available as part of the [report](https://github.com/anmollp/COT5405-AOA-Graphs/blob/main/report/MinimumSpanningTree.pdf).
+* Latex source of report available [here](https://github.com/anmollp/COT5405-AOA-Graphs/blob/main/latex/AOA-Assignment1-Part2.tex).
