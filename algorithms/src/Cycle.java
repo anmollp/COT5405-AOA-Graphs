@@ -92,11 +92,12 @@ class CycleClient {
             boolean result = testCase[i].hasCycle();
             long finish = System.nanoTime();
             long timeElapsed = finish - start;
-            if(result)
+            if(result) {
                 System.out.println("\n" + timeElapsed + " nanoseconds elapsed in finding a cycle for " +
                         testVertices[i] + " vertices" + " and " + testEdges[i] + " edges");
-            //Print the knot
-            testCase[i].printCycle();
+                //Print the knot
+                testCase[i].printCycle();
+            }
         }
 
     }

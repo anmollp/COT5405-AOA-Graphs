@@ -1,4 +1,5 @@
 import org.jgrapht.Graph;
+import org.jgrapht.alg.interfaces.SpanningTreeAlgorithm;
 import org.jgrapht.alg.spanning.KruskalMinimumSpanningTree;
 import org.jgrapht.generate.GnmRandomGraphGenerator;
 import org.jgrapht.generate.GraphGenerator;
@@ -41,14 +42,6 @@ class MST {
         Random rand = new Random();
         int upperBound = max - min + 1;
         return min + rand.nextInt(upperBound);
-    }
-
-    public Set<DefaultWeightedEdge> findMinimumSpanningTreeLibrary(Graph<Integer, DefaultWeightedEdge> graph) {
-        Set<DefaultWeightedEdge> min_span_edges = new HashSet<>();
-        for (DefaultWeightedEdge e : new KruskalMinimumSpanningTree<>(graph).getSpanningTree()) {
-            min_span_edges.add(e);
-        }
-        return min_span_edges;
     }
 
     public Boolean isCyclicUtil(int v, int parent, Boolean[] visited, DefaultWeightedEdge maxEdge) {
@@ -97,9 +90,18 @@ class MST {
         return false;
     }
 
-    public Set<DefaultWeightedEdge> getMinimumSpanningTree() {
+    public double getKruskalMSTWeight(Graph<Integer, DefaultWeightedEdge> graph) {
+        SpanningTreeAlgorithm.SpanningTree<DefaultWeightedEdge> x =
+                new KruskalMinimumSpanningTree<>(graph).getSpanningTree();
+        return x.getWeight();
+    }
 
-        return new HashSet<>(g.edgeSet());
+    public double getMinimumSpanningTreeWeight() {
+        double totalWeight = 0;
+        for(DefaultWeightedEdge e: g.edgeSet()) {
+            totalWeight += g.getEdgeWeight(e);
+        }
+        return totalWeight;
     }
 }
 
@@ -121,7 +123,7 @@ class MSTClient {
             System.out.println(timeElapsed + " nanoseconds elapsed in computing MST for " +
                     testVertices[j] + " vertices" + " and " + (testVertices[j] + 8) + " edges");
             //Test case validation
-            if (testCase[j].findMinimumSpanningTreeLibrary(graph).size() != testCase[j].getMinimumSpanningTree().size())
+            if (testCase[j].getMinimumSpanningTreeWeight() != testCase[j].getKruskalMSTWeight(graph))
                 throw new AssertionError();
         }
 
